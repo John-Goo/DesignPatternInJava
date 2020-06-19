@@ -1,20 +1,17 @@
-package com.wit2cloud.designpattern;
+package com.wit2cloud.designpattern.structural.proxy.v1;
 /*==========================================================================
  * Copyright (C) Wit2Cloud Co.,Ltd
  * All Rights Reserved.
- * Created By 慧云数字课程
+ * Created By 慧云数字课堂
  ==========================================================================*/
 
 /**
  * @author John Goo
  * @version 1.0
- * @ClassName: Demo
- * @Desc: 测试环境是否良好
+ * @ClassName: HelloInterface
+ * @Desc: TODO
  * @history v1.0
  */
-public class Demo {
-
-    public static void main(String[] args) {
-        System.out.println("Hello,慧云数字课程！");
-    }
+public interface HelloInterface {
+    public void hi(String msg);
 }

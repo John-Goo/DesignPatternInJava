@@ -1,4 +1,4 @@
-package com.wit2cloud.designpattern;
+package com.wit2cloud.designpattern.creational.builder.t1.old;
 /*==========================================================================
  * Copyright (C) Wit2Cloud Co.,Ltd
  * All Rights Reserved.
@@ -8,13 +8,16 @@ package com.wit2cloud.designpattern;
 /**
  * @author John Goo
  * @version 1.0
- * @ClassName: Demo
- * @Desc: 测试环境是否良好
+ * @ClassName: ByteDemo
+ * @Desc: TODO
  * @history v1.0
  */
-public class Demo {
+public class ByteDemo {
+    private volatile String str;
 
-    public static void main(String[] args) {
-        System.out.println("Hello,慧云数字课程！");
+    public void modify(String str1){
+        synchronized (str1){
+            str1 = "hello,world!";
+        }
     }
 }

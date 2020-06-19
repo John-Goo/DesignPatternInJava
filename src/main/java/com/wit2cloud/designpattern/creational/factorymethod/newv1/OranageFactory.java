@@ -1,4 +1,4 @@
-package com.wit2cloud.designpattern;
+package com.wit2cloud.designpattern.creational.factorymethod.newv1;
 /*==========================================================================
  * Copyright (C) Wit2Cloud Co.,Ltd
  * All Rights Reserved.
@@ -8,13 +8,13 @@ package com.wit2cloud.designpattern;
 /**
  * @author John Goo
  * @version 1.0
- * @ClassName: Demo
- * @Desc: 测试环境是否良好
+ * @ClassName: OranageFactory
+ * @Desc: 橘子工厂
  * @history v1.0
  */
-public class Demo {
-
-    public static void main(String[] args) {
-        System.out.println("Hello,慧云数字课程！");
+public class OranageFactory extends FruitFactory{
+    @Override
+    public Fruit createFruit() {
+        return new OrangeFruit();
     }
 }
