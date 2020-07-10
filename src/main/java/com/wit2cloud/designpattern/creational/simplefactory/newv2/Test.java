@@ -14,23 +14,21 @@ package com.wit2cloud.designpattern.creational.simplefactory.newv2;
  */
 public class Test {
     public static void main(String[] args) {
-        SimpleFactory sf = new SimpleFactory();
 
         /**
          * 遍历所有的种植水果
          */
-        String[] array = {"apple","banana","orange"};
-        Fruit fruit = null;
-        for (String f:array) {
-            sf.newInstance(f).display();
+        String[] fruitTypes = {"apple", "banana", "orange"};
+        Fruit[] fruits = new Fruit[3];
+        for (int i = 0; i < fruitTypes.length; i++) {
+            String type = fruitTypes[i];
+            Fruit fruit = SimpleFactory.createFruit(type);
+            fruits[i] = fruit;
+            System.out.println(fruit);
         }
+        Fruit fruit = SimpleFactory.createFruit("pear");
+        System.out.println(fruit);
 
-        /**
-         * 操作橘子树
-         */
-        System.out.println(" === 操作橘子树===");
-       /* Fruit orange = sf.createFruit("orange");*/
-        sf.newInstance("orange").display();
 
     }
 }

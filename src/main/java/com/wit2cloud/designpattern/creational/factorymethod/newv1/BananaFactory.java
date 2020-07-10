@@ -15,6 +15,6 @@ package com.wit2cloud.designpattern.creational.factorymethod.newv1;
 public class BananaFactory extends FruitFactory{
     @Override
     public Fruit createFruit() {
-        return new BananaFruit();
+        return new BananaFruit(1001L,"香蕉");
     }
 }

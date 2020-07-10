@@ -12,14 +12,14 @@ package com.wit2cloud.designpattern.creational.factorymethod.newv1;
  * @Desc: 苹果树
  * @history v1.0
  */
-public class AppleFruit implements Fruit {
+public class PearFruit implements Fruit {
 
     //编号
     private Long id;
     // 水果名称
     private  String name;
 
-    public AppleFruit(Long id, String name) {
+    public PearFruit(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -57,7 +57,7 @@ public class AppleFruit implements Fruit {
 
     @Override
     public String toString() {
-        return "AppleFruit{" +
+        return "PearFruit{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

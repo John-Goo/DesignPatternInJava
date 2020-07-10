@@ -22,19 +22,6 @@ public abstract class FruitFactory {
      */
     public abstract Fruit createFruit();
 
-    public void display() {
-        Fruit fruit = createFruit();
-        fruit.plant();
-        fruit.water();
-        fruit.pick();
-    }
-
-    public void display(String type) {
-        Fruit fruit = createFruit();
-        fruit.water();
-        fruit.pick();
-    }
-
 
 }
 

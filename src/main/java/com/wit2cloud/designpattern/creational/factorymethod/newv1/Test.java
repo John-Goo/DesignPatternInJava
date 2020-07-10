@@ -18,14 +18,21 @@ public class Test {
         * 面向扩展开放，面向修改关闭
         *
         * */
-        FruitFactory appleFactory = new AppleFactory();
-        appleFactory.display();
-        FruitFactory bananaFactory = new BananaFactory();
-        bananaFactory.display();
-        FruitFactory oranageFactory = new OranageFactory();
-        oranageFactory.display();
-        //appleFriut.plant();
-       // appleFriut.eat();
+        Fruit fruit = null;
+        FruitFactory fruitFactory = new AppleFactory();
+        fruit = fruitFactory.createFruit();
+        System.out.println(fruit);
+        //缺点：要增加很多工厂类
+        fruitFactory = new BananaFactory();
+        fruit = fruitFactory.createFruit();
+        System.out.println(fruit);
+        fruitFactory = new OranageFactory();
+        fruit =  fruitFactory.createFruit();
+        System.out.println(fruit);
+        fruitFactory = new PearFactory();
+        fruit =  fruitFactory.createFruit();
+        System.out.println(fruit);
+
 
 
     }

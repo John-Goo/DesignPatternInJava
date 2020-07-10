@@ -8,13 +8,13 @@ package com.wit2cloud.designpattern.creational.factorymethod.newv1;
 /**
  * @author John Goo
  * @version 1.0
- * @ClassName: OranageFactory
- * @Desc: 橘子工厂
+ * @ClassName: PearFactory
+ * @Desc: TODO
  * @history v1.0
  */
-public class OranageFactory extends FruitFactory{
+public class PearFactory extends FruitFactory{
     @Override
     public Fruit createFruit() {
-        return new OrangeFruit(1003L,"桔子");
+        return new AppleFruit(1004L,"梨子");
     }
 }

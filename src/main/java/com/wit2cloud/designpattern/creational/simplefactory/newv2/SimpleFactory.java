@@ -14,35 +14,21 @@ package com.wit2cloud.designpattern.creational.simplefactory.newv2;
  */
 public class SimpleFactory {
 
-    ThreadLocal<Fruit> tl = new ThreadLocal<>();
 
-    /**
-     * 创建实例对象
-     * @param type
-     * @return
-     */
-    public Fruit createFruit(String type) {
-        Fruit fruit = generateFruit(type);
-        return fruit;
-    }
-
-    public SimpleFactory newInstance(String type){
-        Fruit fruit = generateFruit(type);
-        tl.set(fruit);
-        return this;
-    }
-
-    private Fruit generateFruit(String type) {
+    public static Fruit createFruit(String type) {
         Fruit fruit = null;
         switch (type) {
             case "apple":
-                fruit = new AppleFruit();
+                fruit = new AppleFruit(1001L,"苹果");
                 break;
             case "banana":
-                fruit = new BananaFruit();
+                fruit = new BananaFruit(1002L,"香蕉");
                 break;
             case "orange":
-                fruit = new OrangeFruit();
+                fruit = new OrangeFruit(1003L,"桔子");
+                break;
+            case "pear":
+                fruit = new PearFruit();
                 break;
             default:
                 System.out.println(" 水果类型不存在！");
@@ -50,16 +36,5 @@ public class SimpleFactory {
         return fruit;
     }
 
-
-    public void display(){
-        Fruit fruit = tl.get();
-        if(fruit != null) {
-            fruit.plant();
-            fruit.water();
-            fruit.pick();
-        }
-        // 清空缓存
-        tl.set(null);
-    }
 
 }
