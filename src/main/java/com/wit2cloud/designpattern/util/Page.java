@@ -9,17 +9,22 @@ package com.wit2cloud.designpattern.util;
  * @author John Goo
  * @version 1.0
  * @ClassName: Page
- * @Desc: TODO
+ * @Desc: 分页类
  * @history v1.0
  */
 public class Page {
 
+    // 总记录条数
     private int totalRow;
     // 每页条数，默认20条
     private int pageSize = 20;
+    // 总页数
     private int totalPage;
+    // 起始位置
     private int from;
+    // 结束位置
     private int to;
+    // 当前页
     private int currentPage;
 
     public Page totalRow(int totalRow) {
@@ -41,19 +46,17 @@ public class Page {
 
     public void currentPage(int currentPage) {
         this.totalPage();
-        if(currentPage > totalPage){
+        if (currentPage > totalPage) {
             throw new RuntimeException(">>> 分页发生异常，当前页大于总分页数！");
         }
         this.currentPage = currentPage;
         // 游标-开始
         this.from = (currentPage - 1) * pageSize;
         // 游标-结束
-        this.to   = (currentPage - 1) * pageSize + (pageSize - 1);
-        if(this.to > totalRow){
+        this.to = (currentPage - 1) * pageSize + (pageSize - 1);
+        if (this.to > totalRow) {
             this.to = totalRow;
         }
-
-
     }
 
     public int getTotalRow() {
