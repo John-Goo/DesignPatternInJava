@@ -2,7 +2,7 @@ package com.wit2cloud.designpattern.creational.builder.t2;
 /*==========================================================================
  * Copyright (C) Wit2Cloud Co.,Ltd
  * All Rights Reserved.
- * Created By 慧云数字课程
+ * Created By 慧云数字课堂
  ==========================================================================*/
 
 /**
@@ -14,63 +14,93 @@ package com.wit2cloud.designpattern.creational.builder.t2;
  */
 public class Form {
     private String name;
-    private String address;
-    private String job;
     private String email;
+    private String job;
+    private String addr;
 
-    public Form(FormBuilder builder) {
+    public Form(Builder builder) {
         this.name = builder.name;
-        this.address = builder.address;
-        this.job = builder.job;
         this.email = builder.email;
-    }
-    public static FormBuilder builder(){
-        return  new FormBuilder();
+        this.job = builder.job;
+        this.addr = builder.addr;
     }
 
-    public static class FormBuilder {
+    /**
+     * 外部访问的入口
+     * @return
+     */
+    public static Builder builder(){
+        return new Builder();
+    }
+
+    public static class Builder{
         private String name;
-        private String address;
-        private String job;
         private String email;
+        private String job;
+        private String addr;
 
-        public FormBuilder name(String name) {
+        public Builder name(String name) {
             this.name = name;
             return this;
         }
-
-        public FormBuilder address(String address) {
-            this.address = address;
+        public Builder email(String email) {
+            this.email = email;
             return this;
         }
-
-        public FormBuilder job(String job) {
+        public Builder job(String job) {
             this.job = job;
             return this;
         }
-
-        public FormBuilder email(String email) {
-            this.email = email;
+        public Builder addr(String addr) {
+            this.addr = addr;
             return this;
         }
 
         public Form build(){
-            return new Form(this);
+            return  new Form(this);
         }
 
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public String getAddr() {
+        return addr;
+    }
+
+    public void setAddr(String addr) {
+        this.addr = addr;
     }
 
     @Override
     public String toString() {
         return "Form{" +
                 "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", job='" + job + '\'' +
                 ", email='" + email + '\'' +
+                ", job='" + job + '\'' +
+                ", addr='" + addr + '\'' +
                 '}';
     }
-
-
-
 }

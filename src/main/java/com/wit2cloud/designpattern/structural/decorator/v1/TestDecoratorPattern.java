@@ -10,6 +10,7 @@ public class TestDecoratorPattern {
 		Pizza pizza = new SimplyVegPizza();
 		
 		pizza = new RomaTomatoes(pizza);
+		RomaTomatoes tomatoes = new RomaTomatoes(pizza);
 		pizza = new GreenOlives(pizza);
 		pizza = new Spinach(pizza);
 		

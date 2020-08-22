@@ -5,6 +5,7 @@ package com.wit2cloud.designpattern.creational.abstractfactory;
  * All Rights Reserved.
  * Created By 慧云数字课程
  ==========================================================================*/
+// Product接口
 public interface Fruit {
     /**
      * 种植水果树

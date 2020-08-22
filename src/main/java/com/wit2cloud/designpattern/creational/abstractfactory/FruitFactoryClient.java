@@ -9,22 +9,23 @@ package com.wit2cloud.designpattern.creational.abstractfactory;
  * @author John Goo
  * @version 1.0
  * @ClassName: FruitFactoryClient
- * @Desc: 获取具体的种植果园工厂
+ * @Desc: TODO
  * @history v1.0
  */
 public class FruitFactoryClient {
 
-
-    /**
-     * 获取具体的种植工厂
-     * @param facType
-     * @return
-     */
-    public static AbstractFruitFactory getFruitFactory(String facType) {
-        switch (facType){
-            case "T1":return new T1FruitFactory();
-            case "T2":return new T2FruitFactory();
+    public static AbstractFruitFactory createFactory(String factoryType) {
+        AbstractFruitFactory factory = null;
+        switch (factoryType) {
+            case "T1":
+                factory = new T1FruitFactory();
+                break;
+            case "T2":
+                factory = new T2FruitFactory();
+                break;
         }
-        return null;
+        return factory;
     }
+
+
 }
